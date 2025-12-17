@@ -72,4 +72,3 @@ fn solve_part2(input: String) -> String {
 
     return value.to_string();
 }
-
