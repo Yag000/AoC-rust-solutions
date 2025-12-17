@@ -7,7 +7,6 @@ name = "AoC-rust-solutions"
 version = "0.1.0"
 dependencies = [
  "aoc-star",
- "inventory",
  "regex",
 ]
 
@@ -101,9 +100,9 @@ dependencies = [
 
 [[package]]
 name = "aoc-star"
-version = "0.1.0"
+version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0e1c48a4bca82fbe8cfd333593603eafe472065ee0d18a819823632d24ed96bc"
+checksum = "7c2198c7f1eb8cc5363e59eb1ee9bd9d31bc044f449811f6e1ec33574eb79b2e"
 dependencies = [
  "aoc-client",
  "aoc-star-derive",
@@ -117,9 +116,9 @@ dependencies = [
 
 [[package]]
 name = "aoc-star-derive"
-version = "0.1.0"
+version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a530a0407d2f7870f967999a83705b64f024c2b5f2d91737eb0cd1beb3b9e6c1"
+checksum = "43a54155440a72715303f5e43618e0a344efd1bd8d6933b80bd6ff2e847159d4"
 dependencies = [
  "quote",
  "syn 2.0.111",

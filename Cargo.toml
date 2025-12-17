@@ -4,6 +4,5 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-aoc-star = { version = "0.1.0", features = ["aoc-client"] }
-inventory = "0.3.21"
+aoc-star = { version = "0.1.1", features = ["aoc-client"] }
 regex = "1.12.2"
