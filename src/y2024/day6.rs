@@ -120,12 +120,11 @@ fn loops(t: &[Vec<Option<bool>>], p: (i32, i32)) -> bool {
     while is_inside(&board, pos) {
         let n = next_pos(pos, &d);
 
-        if board[pos.0 as usize][pos.1 as usize] == Some(true) {
-            if let Some(v) = h.get(&pos) {
-                if v.contains(&d) {
-                    return true;
-                }
-            }
+        if board[pos.0 as usize][pos.1 as usize] == Some(true)
+            && let Some(v) = h.get(&pos)
+            && v.contains(&d)
+        {
+            return true;
         }
 
         if is_wall(&board, n) {

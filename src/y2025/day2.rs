@@ -50,7 +50,7 @@ fn handle_interval(start: usize, end: usize, part: u8) -> usize {
 }
 
 fn is_double_number(s: &str) -> bool {
-    if s.len() % 2 != 0 {
+    if !s.len().is_multiple_of(2) {
         return true;
     }
 
@@ -60,7 +60,7 @@ fn is_double_number(s: &str) -> bool {
         return true;
     }
 
-    return false;
+    false
 }
 
 fn is_valid(s: &str) -> bool {
@@ -70,7 +70,7 @@ fn is_valid(s: &str) -> bool {
         let prefix = &s[0..i];
 
         // If the length of s is not a multiple of the prefix length, skip
-        if s.len() % prefix.len() != 0 {
+        if !s.len().is_multiple_of(prefix.len()) {
             continue;
         }
 
@@ -88,5 +88,5 @@ fn is_valid(s: &str) -> bool {
         }
     }
 
-    return true;
+    true
 }

@@ -57,7 +57,7 @@ fn solve_part1(input: String) -> String {
         }
     }
 
-    return value.to_string();
+    value.to_string()
 }
 
 #[star(day = 1, part = 2)]
@@ -70,5 +70,5 @@ fn solve_part2(input: String) -> String {
         value += size;
     }
 
-    return value.to_string();
+    value.to_string()
 }

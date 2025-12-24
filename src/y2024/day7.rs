@@ -5,7 +5,7 @@ fn can_be_obtained(key: u64, t: &[&u64]) -> bool {
         None => key == 0,
         Some(v) => {
             can_be_obtained(key - *v, &t[1..])
-                || (key % *v == 0 && can_be_obtained(key / *v, &t[1..]))
+                || (key.is_multiple_of(**v) && can_be_obtained(key / *v, &t[1..]))
         }
     }
 }
@@ -49,7 +49,7 @@ fn can_be_obtained2(key: u64, t: &[&u64]) -> bool {
             let sv = v.to_string();
 
             can_be_obtained2(key - *v, &t[1..])
-                || (key % *v == 0 && can_be_obtained2(key / *v, &t[1..]))
+                || (key.is_multiple_of(**v) && can_be_obtained2(key / *v, &t[1..]))
                 || (sk.len() > sv.len()
                     && sk[sk.len() - sv.len()..] == sv
                     && can_be_obtained2(sk[0..sk.len() - sv.len()].parse().unwrap(), &t[1..]))
