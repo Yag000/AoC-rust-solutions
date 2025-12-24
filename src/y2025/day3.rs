@@ -29,13 +29,12 @@ fn part1(input: String) -> String {
         .to_string()
 }
 
-
-fn max_joltage2(adapters: &Vec<u64>) -> u64{
-    // We want to maximise the current so it will 
-    // contain 12 digits of adapter, such that they 
+fn max_joltage2(adapters: &Vec<u64>) -> u64 {
+    // We want to maximise the current so it will
+    // contain 12 digits of adapter, such that they
     // apear one after the other (with possible gaps)
     // in the input list.
-    let mut current = [0,0,0,0,0,0,0,0,0,0,0,0];
+    let mut current = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     let mut current_index = 0;
     for (i, battery) in adapters.iter().enumerate() {
         // For every digit of current (such that is smaller or equal to current_index)
@@ -46,7 +45,7 @@ fn max_joltage2(adapters: &Vec<u64>) -> u64{
             if adapters.len() - i >= 12 - j {
                 if *battery > current[j] {
                     current[j] = *battery;
-                    for k in (j+1)..12 {
+                    for k in (j + 1)..12 {
                         current[k] = 0;
                     }
                     if j == current_index && current_index < 11 {
@@ -68,7 +67,10 @@ fn part2(input: String) -> String {
     input
         .lines()
         .fold(0, |acc, line| {
-            let adapters: Vec<u64> = line.chars().map(|c| c.to_digit(10).unwrap() as u64).collect();
+            let adapters: Vec<u64> = line
+                .chars()
+                .map(|c| c.to_digit(10).unwrap() as u64)
+                .collect();
             acc + max_joltage2(&adapters)
         })
         .to_string()
